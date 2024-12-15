@@ -211,5 +211,8 @@ Run the Docker container:
 bash
 Copy code
 docker run -p 5000:5000 filestore-service
-The service will be available at http://localhost:5000.
+The service will be available at http://localhost:5000
 
+ HEAD
+
+ 9fd9d37 (Add README file for file store service)

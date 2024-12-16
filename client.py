@@ -9,12 +9,22 @@ def cli():
 @click.argument('filename')
 def store_file(filename):
   """Stores a file on the server."""
-  # ... your store_file implementation ...
+ try:
+    response = requests.post(f'http://localhost:5000/store/{filename}')
+    print(response.json())
+  except requests.exceptions.RequestException as e:
+    print(f"Error: {e}") 
+# ... your store_file implementation ...
 
 @cli.command('list')
 def list_files():
   """Lists all files on the server."""
-  # ... your list_files implementation ...
+ try:
+    response = requests.get(f'http://localhost:5000/list/{filename}')
+    print(response.json())
+  except requests.exceptions.RequestException as e:
+    print(f"Error: {e}") 
+# ... your list_files implementation ...
 
 @cli.command('remove')
 @click.argument('filename')

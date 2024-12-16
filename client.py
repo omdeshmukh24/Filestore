@@ -13,7 +13,7 @@ def store_file(filename):
     response = requests.post('http://localhost:5000/store' , headers = {'User-Agent': 'Mozilla/5.0'}, data=payload) 
     print(response.json())
   except requests.exceptions.RequestException as e:
-    print(f"Error: {e}") 
+    print("Error: {e}") 
 
 @cli.command('list')
 def list_files():
@@ -22,7 +22,7 @@ def list_files():
     response = requests.get('http://localhost:5000/list') 
     print(response.json())
   except requests.exceptions.RequestException as e:
-    print(f"Error: {e}") 
+    print("Error: {e}") 
 
 
 @cli.command('remove')
@@ -33,7 +33,7 @@ def remove_file(filename):
     response = requests.delete('http://localhost:5000/remove') 
     print(response.json())
   except requests.exceptions.RequestException as e:
-    print(f"Error: {e}")
+    print("Error: {e}")
 
 if __name__ == '_main_':
   cli()

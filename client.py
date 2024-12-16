@@ -10,6 +10,7 @@ def cli():
 def store_file(filename):
   
  try:
+   payload = {'filename':'xyz','content':'123456'}
     response = requests.post('http://localhost:5000/store') , headers = {'User-Agent': 'Mozilla/5.0'}, data=payload 
     print(response.json())
   except requests.exceptions.RequestException as e:

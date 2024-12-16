@@ -27,7 +27,7 @@ try:
 @click.argument('filename')
 def remove_file(filename):
  try:
-    response = requests.delete('http://localhost:5000/remove') 
+    response = requests.delete('http://localhost:5000/remove/{filename}') 
     print(response.json())
   except requests.exceptions.RequestException as e:
     print("Error: {e}")

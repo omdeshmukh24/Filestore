@@ -128,6 +128,7 @@ curl -X PUT -F "file=@file1.txt" http://127.0.0.1:5000/files/update
 **Response:**
 ```json
 {"message": "File updated successfully"}
+```
 
 ---
 

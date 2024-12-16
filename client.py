@@ -17,19 +17,16 @@ def store_file(filename):
 
 @cli.command('list')
 def list_files():
-  
- try:
+try:
     response = requests.get('http://localhost:5000/list') 
     print(response.json())
   except requests.exceptions.RequestException as e:
     print("Error: {e}") 
 
-
 @cli.command('remove')
 @click.argument('filename')
 def remove_file(filename):
-  
-  try:
+ try:
     response = requests.delete('http://localhost:5000/remove') 
     print(response.json())
   except requests.exceptions.RequestException as e:

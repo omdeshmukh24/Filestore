@@ -130,22 +130,6 @@ curl -X PUT -F "file=@file1.txt" http://127.0.0.1:5000/files/update
 {"message": "File updated successfully"}
 ```
 
-#### Word Count
-**GET** `/files/stats`
-
-Get the total word count of all files stored.
-
-**Request:**
-```bash
-curl http://127.0.0.1:5000/files/stats
-```
-**Response:**
-```json
-{"total_words": 150}
-```
-
-#### Frequent Words
-**GET** `/files/freq-words`
 
 Get the most frequent words across all files.
 

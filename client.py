@@ -42,5 +42,6 @@ def update_file(filename):
     print(response.json())
   except requests.exceptions.RequestException as e:
     print("Error: {e}")
-if __name__ == '_main_':
+    
+ if __name__ == '_main_':
   cli()

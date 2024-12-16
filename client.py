@@ -1,4 +1,4 @@
-thisimport click
+import click
 import requests
 
 @click.group()
@@ -38,7 +38,6 @@ def update_file(filename):
  try:
    payload = {'content':'123456'}
     response = requests.put('http://localhost:5000/update/{filename}' , headers = {'User-Agent': 'Mozilla/5.0'}, data=payload) 
-    print(response.json())
     print(response.json())
   except requests.exceptions.RequestException as e:
     print("Error: {e}")

@@ -45,7 +45,7 @@ def remove_file(filename):
 @app.route('/update/<filename>', methods=['PUT'])
 def update_file(filename):
   try:
-    content = request.form['content']
+    content = request.payload['content']
     success, message = store_file(filename, content)
     if success:
       return jsonify({'message': message})

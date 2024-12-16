@@ -10,7 +10,7 @@ def cli():
 def store_file(filename):
   """Stores a file on the server."""
  try:
-    response = requests.post(f'http://localhost:5000/store/{filename}')
+    response = requests.post(f'http://localhost:5000/store', headers = {'User-Agent': 'Mozilla/5.0'}
     print(response.json())
   except requests.exceptions.RequestException as e:
     print(f"Error: {e}") 

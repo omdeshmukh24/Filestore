@@ -14,8 +14,8 @@ def store_file(filename, content):
 @app.route('/store', methods=['POST'])
 def store():
   try:
-    filename = request.form['filename']
-    content = request.form['content']
+    filename = request.payload['filename']
+    content = request.payload['content']
     success, message = store_file(filename, content)
     if success:
       return jsonify({'message': message})

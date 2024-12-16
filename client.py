@@ -7,18 +7,17 @@ def cli():
 
 @cli.command('store')
 @click.argument('filename')
-def store_file(filename):
-  
+def store_file(filename):  
  try:
    payload = {'filename':'xyz','content':'123456'}
-    response = requests.post('http://localhost:5000/store') , headers = {'User-Agent': 'Mozilla/5.0'}, data=payload 
+    response = requests.post('http://localhost:5000/store' , headers = {'User-Agent': 'Mozilla/5.0'}, data=payload) 
     print(response.json())
   except requests.exceptions.RequestException as e:
     print(f"Error: {e}") 
 
 @cli.command('list')
 def list_files():
-  """Lists all files on the server."""
+  
  try:
     response = requests.get('http://localhost:5000/list') 
     print(response.json())

@@ -32,5 +32,13 @@ def remove_file(filename):
   except requests.exceptions.RequestException as e:
     print("Error: {e}") 
 
+@cli.command('update')
+@click.argument('filename')
+def update_file(filename):
+ try:
+    response = requests.delete('http://localhost:5000/remove/{filename}') 
+    print(response.json())
+  except requests.exceptions.RequestException as e:
+    print("Error: {e}")
 if __name__ == '_main_':
   cli()

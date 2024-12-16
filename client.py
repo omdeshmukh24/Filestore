@@ -36,7 +36,9 @@ def remove_file(filename):
 @click.argument('filename')
 def update_file(filename):
  try:
-    response = requests.delete('http://localhost:5000/remove/{filename}') 
+   payload = {'content':'123456'}
+    response = requests.put('http://localhost:5000/update/{filename}' , headers = {'User-Agent': 'Mozilla/5.0'}, data=payload) 
+    print(response.json())
     print(response.json())
   except requests.exceptions.RequestException as e:
     print("Error: {e}")

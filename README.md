@@ -128,19 +128,6 @@ curl -X PUT -F "file=@file1.txt" http://127.0.0.1:5000/files/update
 **Response:**
 ```json
 {"message": "File updated successfully"}
-```
-
-
-Get the most frequent words across all files.
-
-**Request:**
-```bash
-curl http://127.0.0.1:5000/files/freq-words
-```
-**Response:**
-```json
-{"words": [{"word": "the", "count": 15}, {"word": "is", "count": 12}]}
-```
 
 ---
 

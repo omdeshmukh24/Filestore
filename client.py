@@ -1,4 +1,4 @@
-import click
+thisimport click
 import requests
 
 @click.group()
@@ -30,7 +30,7 @@ def remove_file(filename):
     response = requests.delete('http://localhost:5000/remove/{filename}') 
     print(response.json())
   except requests.exceptions.RequestException as e:
-    print("Error: {e}")
+    print("Error: {e}") 
 
 if __name__ == '_main_':
   cli()

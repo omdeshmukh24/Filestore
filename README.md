@@ -25,15 +25,7 @@ Additionally, the service can be deployed on a Kubernetes/OpenShift cluster usin
 - **Update Files**: Replace the content of an existing file with:
   ```bash
   store update file.txt
-  ```
-- **Word Count**: Get the total word count of all files stored on the server using:
-  ```bash
-  store wc
-  ```
-- **Frequent Words**: List the most frequent words across all stored files, sorted by frequency with:
-  ```bash
-  store freq-words
-  ```
+  ``
 
 ---
 

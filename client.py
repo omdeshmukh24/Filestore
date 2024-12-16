@@ -5,7 +5,7 @@ import requests
 def cli():
   pass
 
-@cli.command('store')
+@cli.command('store add')
 @click.argument('filename')
 def store_file(filename):  
  try:
@@ -15,7 +15,7 @@ def store_file(filename):
   except requests.exceptions.RequestException as e:
     print("Error: {e}") 
 
-@cli.command('list')
+@cli.command('store ls')
 def list_files():
 try:
     response = requests.get('http://localhost:5000/list') 
@@ -23,7 +23,7 @@ try:
   except requests.exceptions.RequestException as e:
     print("Error: {e}") 
 
-@cli.command('remove')
+@cli.command('store rm')
 @click.argument('filename')
 def remove_file(filename):
  try:
@@ -32,7 +32,7 @@ def remove_file(filename):
   except requests.exceptions.RequestException as e:
     print("Error: {e}") 
 
-@cli.command('update')
+@cli.command('store update')
 @click.argument('filename')
 def update_file(filename):
  try:
